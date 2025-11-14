@@ -1,8 +1,8 @@
+/// <reference path="../types/express.d.ts" />
 import { Request, Response } from 'express';
 import { UserModel } from '../models/User';
 import { JWTService } from '../utils/jwt';
 import { validationResult } from 'express-validator';
-import { ref } from 'process';
 
 export class AuthController {
     static async register(req: Request, res: Response) {
