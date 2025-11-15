@@ -14,7 +14,7 @@ export const Login: React.FC = () => {
 
     try {
       await login(email, password);
-      navigate("/dashabord");
+      navigate("/dashboard");
     } catch {
       // Error is handled in context
     }

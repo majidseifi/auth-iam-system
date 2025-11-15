@@ -30,7 +30,7 @@ export class UserModel {
         const password_hash = await bcrypt.hash(password, 10);
 
         const result = await pool.query(
-            `INSERT INTO users (email, password_hash, first_name, last_name, role)'
+            `INSERT INTO users (email, password_hash, first_name, last_name, role)
             VALUES ($1, $2, $3, $4, $5)
             RETURNING id, email, first_name, last_name, role, is_active, email_verified, created_at, updated_at`,
             [email, password_hash, first_name, last_name, role]
